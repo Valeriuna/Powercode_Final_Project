@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hospital</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
     </style>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <div class="first_screen">
@@ -29,7 +30,61 @@
             </ul>
           </nav>
           <div class="header_btn">
-            <a href="#">Login</a>
+            <button id="modal_open" class="open_btn">Login</button>
+          </div>
+
+          <div class="back-drop" id="back-drop">
+            <form action="main.php">
+              <div class="modal">
+                <div class="modal_close">
+                  <button id="modal_close" class="close-btn">
+                    <img src="img/ic_sharp-close.png" alt="" />
+                  </button>
+                </div>
+                <div class="text">
+                  <h2 id="text">Login</h2>
+                  <p class="lorem_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br> Quam duis vitae curabitur amet, fermentum lorem.
+                  </p>
+                  <ul>
+                    <li>
+                      <button><img src="img/apple.png" alt="" /></button>
+                    </li>
+                    <li>
+                      <button><img src="img/facebook 1.png" alt="" /></button>
+                    </li>
+                    <li>
+                      <button><img src="img/googleitem.png" alt="" /></button>
+                    </li>
+                  </ul>
+                  <div class="separate">
+                    <span> OR </span>
+                  </div>
+                  <input
+                    class="input_form"
+                    type="email"
+                    placeholder="yourmail@gmail.com"
+                  />
+                  <input
+                    class="input_password"
+                    type="password"
+                    placeholder="•••••••••••••"
+                  />
+                  <p class="checkbox">
+                    <input
+                    class="checkbox_item"
+                    type="checkbox"
+                    name="contact"
+                    value="email"
+                  />
+                  Remember me
+                  </p>
+                  <a  class="forgot_password" href="#">Forgot password?</a>
+                  <input class="input_submit" type="submit" value="Enter" />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
         <div class="hero">
@@ -256,8 +311,8 @@
           <div class="footer_contact">
             <h3>Get Medical Checkup Voucher</h3>
             <form action="main.php">
-              <input type="email" placeholder="enter your email" />
-              <input type="submit" value="Subscribe" />
+              <input class="input_footer" type="email" placeholder="enter your email" />
+              <input class="submit_footer" type="submit" value="Subscribe" />
             </form>
           </div>
         </div>
