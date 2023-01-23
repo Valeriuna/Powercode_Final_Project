@@ -30,6 +30,9 @@ nav ul a {
   color: #000000;
   text-decoration: none;
 }
+.user {
+  display: none;
+}
 
 .open_btn {
   border: 2px solid #0099ff;
@@ -345,11 +348,13 @@ nav ul a {
   border-radius: 5px;
   width: 308px;
   text-align: center;
+  z-index: -1;
 }
 .item img {
   position: absolute;
   left: 100px;
   top: -70px;
+  z-index: -1;
 }
 .item h3 {
   font-weight: 600;
@@ -469,6 +474,7 @@ nav ul a {
 .doctors {
   position: relative;
   width: 320px;
+  z-index: -1;
 }
 .info {
   min-height: 146px;

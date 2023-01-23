@@ -30,12 +30,16 @@
               </li>
             </ul>
           </nav>
+          <div class="user" id="user-info">
+            <span id="user-name"></span>
+            <button id="sign-out-btn">Sign out</button>
+          </div>
           <div class="header_btn">
             <button id="modal_open" class="open_btn" type="button">Login</button>
           </div>
 
           <div class="back-drop" id="back-drop">
-            <form action="main.php">
+            <form action="main.php" id="form">
               <div class="modal">
                 <div class="modal_close">
                   <button id="modal_close" class="close-btn" type="button">
@@ -63,17 +67,20 @@
                     <span> OR </span>
                   </div>
                   <input
+                    name="email"
                     class="input_form"
                     type="email"
                     placeholder="yourmail@gmail.com"
                   />
                   <input
+                  name="password"
                     class="input_password"
                     type="password"
                     placeholder="•••••••••••••"
                   />
                   <p class="checkbox">
                     <input
+                    name="checkbox"
                     class="checkbox_item"
                     type="checkbox"
                     name="contact"
@@ -82,7 +89,7 @@
                   Remember me
                   </p>
                   <a class="forgot_password" href="#">Forgot password?</a>
-                  <input class="input_submit" type="submit" value="Enter" />
+                  <input name="submit" class="input_submit" type="submit" value="Enter" />
                 </div>
               </div>
             </form>

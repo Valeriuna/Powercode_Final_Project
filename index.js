@@ -1,5 +1,45 @@
 "use strict";
 
+
+let user = null;
+
+const userInfoEl = document.getElementById("user-info");
+const userNameEl = document.getElementById("user-name");
+const userLoginFromStorage = localStorage.getItem("userName");
+
+if (userLoginFromStorage) {
+  onSignIn(userLoginFromStorage);
+}
+
+function onSignIn(login) {
+  modalOpen.classList.add("user");
+  userInfoEl.classList.remove("user");
+  localStorage.setItem("userName", login)
+  userNameEl.innerText = login;
+}
+
+function onSignOut() {
+  modalOpen.classList.remove("user");
+  userInfoEl.classList.add("user");
+  localStorage.removeItem("userName")
+  userNameEl.innerText = " ";
+}
+
+function validateUser(login, password) {
+  switch (login) {
+    case "Lera@gmail.com":
+      return password === "1234";
+    case "Admin@gmail.com":
+      return password === "qwerty";
+    default:
+      return false;
+  }
+}
+
+document.getElementById("sign-out-btn").onclick = onSignOut;
+
+//Modal
+
 const modalOpen = document.getElementById("modal_open");
 modalOpen.onclick = openModal;
 const backDrop = document.getElementById("back-drop");
@@ -21,6 +61,23 @@ const generalClose = document.addEventListener("click", function (event) {
 });
 
 
+//Form
+
+document.getElementById("form").onsubmit = (event) => {
+  event.preventDefault();
+
+  const formData = new formData(event.target);
+  const formvalue = Object.fromEntries(formData);
+
+if (validateUser(formvalue.login, formvalue.password)) {
+  onSignIn(formvalue.login);
+  closeModal();
+} else {
+  alert("Wrong credentials");
+}
+}
+
+//Array
 
 const stepsArr = [
   {
